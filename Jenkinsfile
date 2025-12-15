@@ -51,9 +51,10 @@ pipeline {
                         usernameVariable: 'DOCKER_USER',
                         passwordVariable: 'DOCKER_PASS'
                 )]) {
+                    //Login to DockerHub securely and Push image to remote registry
                     sh '''
-                    echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin     //Login to DockerHub securely
-                    docker push $IMAGE_NAME:$IMAGE_TAG     //Push image to remote registry
+                    echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin    
+                    docker push $IMAGE_NAME:$IMAGE_TAG     
                     '''
                 }
             }
