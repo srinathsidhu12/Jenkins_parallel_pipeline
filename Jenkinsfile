@@ -64,7 +64,7 @@ pipeline {
             steps {
                 sh '''
                 docker rm -f java-app || true      //Remove old container if it exists
-                docker run -d -p 8080:8080 --name java-app $IMAGE_NAME:$IMAGE_TAG     // Run new container
+                docker run -d -p 9090:8080 --name java-app $IMAGE_NAME:$IMAGE_TAG     // Run new container
                 '''
             }
         }
