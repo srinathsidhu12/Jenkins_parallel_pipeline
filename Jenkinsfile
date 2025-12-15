@@ -11,7 +11,7 @@ pipeline {
         stage('Checkout') {                                    
             steps {
                 git branch: 'main',
-                    url: 'https://github.com/yourusername/java-parallel-pipeline-demo.git'
+                    url: 'https://github.com/srinathsidhu12/Jenkins_parallel_pipeline.git'
             }
         }
 
@@ -47,7 +47,7 @@ pipeline {
         stage('Docker Push') {
             steps {
                 withCredentials([usernamePassword(
-                        credentialsId: 'dockerhub-creds',
+                        credentialsId: 'my-dockerhub-creds',
                         usernameVariable: 'DOCKER_USER',
                         passwordVariable: 'DOCKER_PASS'
                 )]) {
